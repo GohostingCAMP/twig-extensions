@@ -1,0 +1,31 @@
+{
+    "name": "gohostingcamp/twig-extensions",
+    "description": "A set of useful Twig filters",
+    "keywords": ["html_entity_decode", "utf8_ansi"],
+    "license": "MIT",
+    "homepage": "",
+    "authors": [
+        {
+            "name": "Martin _Hansen",
+            "email": "mh@goh.dk",
+            "homepage": "https://www.gohosting.camp"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "twig/twig": "^2.0 | ^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "GohostingCAMP\\Twig\\": "src/"
+        }
+    },
+    "require-dev": {
+        "php": ">=7.2.0"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/support/"
+        ]
+    }
+}
