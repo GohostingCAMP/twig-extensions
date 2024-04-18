@@ -28,7 +28,17 @@ class DecodeExtension extends AbstractExtension
         return [
             new TwigFilter('html_entity_decode', [$this, 'twig_html_entity_decode']),
             new TwigFilter('utf82ansi', [$this, 'twig_utf82ansi']),
+            new TwigFilter('isValidUUID', [$this, 'isValidUUID']),
         ];
+    }
+
+    public function isValidUUID($value)
+    {
+        if (!isset($value)) {
+            return false;
+        }
+
+        return is_string($value) && preg_match('/^[a-f\d]{8}(-[a-f\d]{4}){4}[a-f\d]{8}$/i', $value);
     }
 
     public function twig_html_entity_decode($value)
